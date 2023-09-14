@@ -37,7 +37,7 @@ def menu():
             guardar_fuerza_bruta(resultados)
         
         elif eleccion == "3":
-            print("¡Hasta luego!")
+            print("Saliendo del programa...")
             break
 
         else:
