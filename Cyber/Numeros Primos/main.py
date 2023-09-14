@@ -25,7 +25,7 @@ def menu():
 
         if eleccion == "1":
             mensaje = input("Ingrese el mensaje a cifrar: ")
-            clave_decimacion = int(input("Ingrese la clave de decimación (coprimo con 27): "))
+            clave_decimacion = int(input("Ingrese la clave de decimación: "))
             clave_desplazamiento = int(input("Ingrese la clave de desplazamiento: "))
             
             mensaje_cifrado = cifrado.cifrar(mensaje, clave_decimacion, clave_desplazamiento)

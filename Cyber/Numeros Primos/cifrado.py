@@ -38,20 +38,19 @@ def descifrar(mensaje_cifrado, a, b):
             descifrado += letra
     return descifrado
 
-
 # Función de fuerza bruta para encontrar posibles claves y mensajes descifrados
 def fuerza_bruta(mensaje_cifrado):
-    primos_menores_20 = [2, 3, 5, 7, 11, 13, 17, 19]
-    resultados = []
+    primos_menores_20 = [2, 3, 5, 7, 11, 13, 17, 19]  # Lista de números primos menores a 27
+    resultados = []  # Lista para guardar los resultados
     m = len(ALFABETO)
     
     for a in primos_menores_20:
-        if encontrar_inverso(a, m): # encontrar inversos nos devuelve M y no None seguimos y desciframos la frase con esas constantes
-            for b in range(m):  # b puede ser cualquier valor entre 0 y m-1
-                descifrado = descifrar(mensaje_cifrado, a, b) 
-                resultados.append((a, b, descifrado))
+        if encontrar_inverso(a, m):  # Si 'a' tiene un inverso multiplicativo modulo 'm'
+            for b in primos_menores_20:  # Iteramos solo sobre números primos para 'b'
+                print(f'El valor a {a} el valor b {b}')
+                descifrado = descifrar(mensaje_cifrado, a, b)  # Desciframos el mensaje usando 'a' y 'b'
+                resultados.append((a, b, descifrado))  # Añadimos el resultado a la lista de resultados
     return resultados
-
 
 # Función para encontrar el inverso multiplicativo de 'a' modulo 'm'
 # Si existe un número i tal que (a * i) mod m = 1, entonces i es el inverso multiplicativo de a mod m
