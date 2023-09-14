@@ -1,5 +1,4 @@
 # main.py
-
 import cifrado
 
 def guardar_resultados(mensaje, mensaje_cifrado):
@@ -16,13 +15,33 @@ def guardar_fuerza_bruta(resultados):
             archivo.write("="*50 + "\n")
     print("Los resultados han sido escritos en 'resultados_fuerza_bruta.txt'")
 
+def menu():
+    while True:
+        print("\n--- Menú ---")
+        print("1. Cifrar mensaje")
+        print("2. Descifrar mensaje usando fuerza bruta")
+        print("3. Salir")
+        eleccion = input("Ingrese su elección: ")
+
+        if eleccion == "1":
+            mensaje = input("Ingrese el mensaje a cifrar: ")
+            clave_decimacion = int(input("Ingrese la clave de decimación (coprimo con 27): "))
+            clave_desplazamiento = int(input("Ingrese la clave de desplazamiento: "))
+            
+            mensaje_cifrado = cifrado.cifrar(mensaje, clave_decimacion, clave_desplazamiento)
+            guardar_resultados(mensaje, mensaje_cifrado)
+        
+        elif eleccion == "2":
+            mensaje_cifrado = input("Ingrese el mensaje cifrado a descifrar: ")
+            resultados = cifrado.fuerza_bruta(mensaje_cifrado)
+            guardar_fuerza_bruta(resultados)
+        
+        elif eleccion == "3":
+            print("¡Hasta luego!")
+            break
+
+        else:
+            print("Elección inválida. Intente nuevamente.")
+
 if __name__ == '__main__':
-    mensaje = "LASCLAVESSSHOTORGANACCESOPRIVILEGIADOAMUCHOSSISTEMASINTERNOSAMENUDOESTASCLAVESNOTIENENFECHASDEVENCIMIENTOYSONDIFICILESDEMONITOREARSILASCLAVESSHSEREVELANOSEVENCOMPROMETIDOSLOSATACANTESPUEDENUSARLASPARAMOVERSELIBREMENTEDENTRODELAREADEMASACCESOFACILALASCLAVESSHALMACENADASENCOMPUTADORASOSERVIDORESFACILITAAQUELOSATACANTESSEDESPLACENLATERALMENTEDENTRODELAORGANIZACION"
-    clave_decimacion = 17
-    clave_desplazamiento = 19
-
-    mensaje_cifrado = cifrado.cifrar(mensaje, clave_decimacion, clave_desplazamiento)
-    guardar_resultados(mensaje, mensaje_cifrado)
-
-    resultados = cifrado.fuerza_bruta(mensaje_cifrado)
-    guardar_fuerza_bruta(resultados)
+    menu()
