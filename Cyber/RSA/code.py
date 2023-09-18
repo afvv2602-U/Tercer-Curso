@@ -1,67 +1,63 @@
 def main():
-    n,z = formulas(11,3)
+    n, z = calculo_p_q(7, 17)
     k = coprimo(z)
-    j = find_j(k,z)
-    mensaje = 'HOLASOYPEDRO'
-    mensaje_encrip = encriptar(mensaje,k,n)
-    print(f'Mensaje encriptado {mensaje_encrip}')
-    mensaje__desencr = reverse(mensaje_encrip,j,n)
-    print(f'Mensaje desencriptado {mensaje__desencr}')
-    
-def formulas(p,q):
-    n = p*q
-    z = (p - 1) * (q -1)
-    return n,z
+    j = find_j(k, z)
 
-# Función para encontrar un número coprimo con 'z' en el rango de 2 a 'z-1'
+    mensaje = 'HOLASOYPEDROMEENCANTANADARYHACERSKATE'
+
+    mensaje_encrip = encriptar(mensaje, k, n)
+
+    print(f'Mensaje encriptado: {mensaje_encrip}')
+
+    mensaje_desencr = desencriptar(mensaje_encrip, j, n)
+
+    print(f'Mensaje desencriptado: {"".join([ALFABETO[M] for M in mensaje_desencr])}')
+
+# Calcula y devuelve el n y z    
+def calculo_p_q(p, q):
+    n = p * q
+    z = (p - 1) * (q - 1)
+    return n, z
+
+# Encuentra y devuelve un numero coprimo con 'z' desde el rango 2 hasta z-1
 def coprimo(z):
-    # Itera desde 2 hasta 'z-1'
     for k in range(2, z):
-        # Si el MCD de 'z' y 'k' es 1, significa que son coprimos
-        if gcd(z, k) == 1:
-            # Retorna el valor 'k' que es coprimo con 'z'
+        if mcd(z, k) == 1:
             return k
-    # Si la función no encontró ningún valor 'k' que sea coprimo con 'z', retorna None
     return None
 
-# Función para calcular el Greates Common Divisor (gcd) de dos números usando el algoritmo de Euclides
-def gcd(a, b):
-    # Mientras b sea diferente de cero, realiza la operación
+# Maximo comun divisor
+def mcd(a, b):
     while b:
-        # Reemplaza 'a' con 'b' y 'b' con 'a' modulo 'b'
         a, b = b, a % b
-    # Cuando 'b' se convierte en cero, 'a' contiene el MCD de los dos números iniciales
     return a
 
-def find_j(k,z):
+# Encontrar la clave privada escapando cuando encontremos el primer numero entero usando k y z
+def find_j(k, z):
     cont = 1
     while True:
         j = (1 + cont * z) / k
-        cont = cont +1
+        cont = cont + 1
         if j.is_integer():
-            return j
+            return int(j)
 
-# def find_j(k, z):
-#     for j in range(1, z):
-#         if (j * k) % z == 1:
-#             return j
-#     return None
 
 def encriptar(mensaje, k, n):
-    M = ALFABETO.index(mensaje)
-    C = pow(M, k, n)
-    return ALFABETO[C % len(ALFABETO)]
-        
-def reverse(mensaje,j, n):  
-    desencriptado = ''
+    cifrado = []
     for letra in mensaje:
-        C = ALFABETO.index(letra)
-        # Realizar la operación de desencriptación
-        M = pow(C, int(j), n)  # Utilizar la función pow con tres argumentos para eficiencia
-        M = M % len(ALFABETO)
-        desencriptado += ALFABETO[M]
-        
-    return desencriptado
+        M = ALFABETO.index(letra)
+        C = pow(M, k, n) # Eleva M a k y hace el modulo de n
+        cifrado.append(C)
+    return cifrado
+
+
+def desencriptar(mensaje, j, n):
+    descifrado = []
+    for C in mensaje:
+        M = pow(C, j, n) # Eleva C a j y luego hace el modulo de n
+        descifrado.append(M)
+    return descifrado
+
 
 if __name__ == '__main__':
     ALFABETO = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
