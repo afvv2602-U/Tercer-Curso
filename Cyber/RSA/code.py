@@ -1,6 +1,10 @@
 def main():
     n, z = calculo_p_q(7, 17)
+
+    # Clave publica
     k = coprimo(z)
+
+    # Clave privada
     j = find_j(k, z)
 
     mensaje = 'HOLASOYPEDROMEENCANTANADARYHACERSKATE'
@@ -22,6 +26,7 @@ def calculo_p_q(p, q):
 # Encuentra y devuelve un numero coprimo con 'z' desde el rango 2 hasta z-1
 # Dos numeros son coprimos si su MCD es 1
 # Si el resultado es 1 entonces k es coprimo con z
+# Y usamos esa K como clave publica
 def coprimo(z):
     for k in range(2, z):
         if mcd(z, k) == 1:
