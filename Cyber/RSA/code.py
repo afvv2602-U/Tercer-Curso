@@ -1,14 +1,17 @@
 def main():
-    p = 11
-    q = 3
-    n = p*q
-    z = (p - 1) * (q -1)
+    n,z = formulas(11,3)
     k = coprimo(z)
     j = find_j(k,z)
-    print(f'el valor n{n}, k {k}')
-    mensaje = reverse(j,n)
-    print(mensaje)
+    mensaje = 'HOLASOYPEDRO'
+    mensaje_encrip = encriptar(mensaje,k,n)
+    print(f'Mensaje encriptado {mensaje_encrip}')
+    mensaje__desencr = reverse(mensaje_encrip,j,n)
+    print(f'Mensaje desencriptado {mensaje__desencr}')
     
+def formulas(p,q):
+    n = p*q
+    z = (p - 1) * (q -1)
+    return n,z
 
 # Función para encontrar un número coprimo con 'z' en el rango de 2 a 'z-1'
 def coprimo(z):
@@ -34,16 +37,23 @@ def find_j(k,z):
     cont = 1
     while True:
         j = (1 + cont * z) / k
-        print(j)
         cont = cont +1
         if j.is_integer():
             return j
+
+# def find_j(k, z):
+#     for j in range(1, z):
+#         if (j * k) % z == 1:
+#             return j
+#     return None
+
+def encriptar(mensaje, k, n):
+    M = ALFABETO.index(mensaje)
+    C = pow(M, k, n)
+    return ALFABETO[C % len(ALFABETO)]
         
-def reverse(j, n):  
-    mensaje = 'QINOQBWJJXBONG'
-    ALFABETO = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+def reverse(mensaje,j, n):  
     desencriptado = ''
-    
     for letra in mensaje:
         C = ALFABETO.index(letra)
         # Realizar la operación de desencriptación
@@ -53,10 +63,6 @@ def reverse(j, n):
         
     return desencriptado
 
-         
-
-
-
-
 if __name__ == '__main__':
+    ALFABETO = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
     main()
