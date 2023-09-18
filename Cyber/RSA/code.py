@@ -20,13 +20,18 @@ def calculo_p_q(p, q):
     return n, z
 
 # Encuentra y devuelve un numero coprimo con 'z' desde el rango 2 hasta z-1
+# Dos numeros son coprimos si su MCD es 1
+# Si el resultado es 1 entonces k es coprimo con z
 def coprimo(z):
     for k in range(2, z):
         if mcd(z, k) == 1:
             return k
     return None
 
-# Maximo comun divisor
+# Maximo comun divisor usando el metodo de euclides
+# Dado dos numeros naturales a y b , a >= b y b != 0
+# Este metodo se basa en tras hacer divisones sucesivas encontrar el numero
+# Rn siendo Rn el ultimo resto no nulo de las divisiones sucesivas
 def mcd(a, b):
     while b:
         a, b = b, a % b
@@ -41,7 +46,8 @@ def find_j(k, z):
         if j.is_integer():
             return int(j)
 
-
+# convierte un mensaje de texto en una serie de numeros cifrados 
+# usando la clave publica k y el módulo n
 def encriptar(mensaje, k, n):
     cifrado = []
     for letra in mensaje:
@@ -50,14 +56,14 @@ def encriptar(mensaje, k, n):
         cifrado.append(C)
     return cifrado
 
-
+# Toma un mensaje cifrado y lo convierte de nuevo en texto 
+# Usando la clave privada j y el modulo n
 def desencriptar(mensaje, j, n):
     descifrado = []
     for C in mensaje:
         M = pow(C, j, n) # Eleva C a j y luego hace el modulo de n
         descifrado.append(M)
     return descifrado
-
 
 if __name__ == '__main__':
     ALFABETO = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
