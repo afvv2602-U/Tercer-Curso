@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block extra_styles %}
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/specific/login.css' %}">
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<!-- Menu -->
+<header id="header" class="alt">
+    <div class="logo"><a href="{% url 'index' %}">Skate blog <span></span></a></div>
+    <a href="#menu">Menu</a>
+</header>
+
+<!-- Header -->
+<section id="two" class="wrapper style3">
+    <div class="inner">
+        <header class="align-center">
+            <h2>Login</h2>
+        </header>
+    </div>
+</section>
+
+<div class="login-box">
+    <h2>Login</h2>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+
+        <!-- Mostrar errores no asociados a campos específicos -->
+        {% if form.non_field_errors %}
+        <div class="error">
+            {{ form.non_field_errors }}
+        </div>
+        {% endif %}
+
+        <div class="user-box">
+            <i class="fas fa-user"></i>
+            <p>{{ form.username.label_tag }}</p>
+            {{ form.username }}
+
+            <!-- Mostrar errores del campo username -->
+            {% if form.username.errors %}
+            <div class="error">
+                {{ form.username.errors }}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="user-box">
+            <i class="fas fa-lock"></i>
+            <p>{{ form.password.label_tag }}</p>
+            {{ form.password }}
+
+            <!-- Mostrar errores del campo password -->
+            {% if form.password.errors %}
+            <div class="error">
+                {{ form.password.errors }}
+            </div>
+            {% endif %}
+        </div>
+
+        <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <input type="submit" value="Iniciar sesión" class="button_login" >
+        </a>
+
+        <br>
+        <br>
+
+        <div class="register">
+            <p>¿No tienes una cuenta? <a class="link" href="{% url 'register' %}">Registrarse</a></p>
+            {% comment %}
+            <p><a href="{% url 'password_reset' %}">¿Has olvidado la contraseña?</a></p>
+            {% endcomment %}
+
+            {% if next %}
+            <input type="hidden" name="next" value="{{ next }}" />
+            {% endif %}
+        </div>
+    </form>
+</div>
+
+{% endblock %}

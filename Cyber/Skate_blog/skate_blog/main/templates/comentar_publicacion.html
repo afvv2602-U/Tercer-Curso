@@ -1,0 +1,12 @@
+<!-- comentar_publicacion.html -->
+
+{% block content %}
+  <h2>Comentar la publicación "{{ publicacion.titulo }}"</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Comentar</button>
+  </form>
+  <a href="{% url 'ver_publicacion' publicacion.id %}">Volver a la publicación</a>
+
+{% endblock %}

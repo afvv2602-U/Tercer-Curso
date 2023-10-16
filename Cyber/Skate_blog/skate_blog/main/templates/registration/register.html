@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Registro{% endblock %}
+{% block extra_style %}
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+
+{% block content %}
+  <!-- Header-->
+  <section id="two" class="wrapper style3">
+    <div class="inner">
+        <header class="align-center">
+           <h2>Registro</h2>
+        </header>
+    </div>
+    </section>
+    
+    <section class="registration-section-reg">
+      <div class="registration-container-reg">
+          <h1>Registro</h1>
+          <form id="formRegistro" method="post" class="formRegistro-reg" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.username.label_tag }} {{ form.username }} {{ form.username.errors }}
+            {{ form.email.label_tag }} {{ form.email }} {{ form.email.errors }}
+            {{ form.first_name.label_tag }} {{ form.first_name }} {{ form.first_name.errors }}
+            {{ form.last_name.label_tag }} {{ form.last_name }} {{ form.last_name.errors }}
+            {{ form.password1.label_tag }} {{ form.password1 }} {{ form.password1.errors }}
+            {{ form.password2.label_tag }} {{ form.password2 }} {{ form.password2.errors }} {{ form.non_field_errors }}
+
+            {{ form.address.label_tag }} {{ form.address }} {{ form.address.errors }}
+            {{ form.city.label_tag }} {{ form.city }} {{ form.city.errors }}
+            {{ form.cp.label_tag }} {{ form.cp }} {{ form.cp.errors }}
+            {{ form.country.label_tag }} {{ form.country }} {{ form.country.errors }}
+            {{ form.genre.label_tag }} {{ form.genre }} {{ form.genre.errors }}
+            {{ form.profile_image.label_tag }} {{ form.profile_image }} {{ form.profile_image.errors }}
+            {{ form.about_me.label_tag }} {{ form.about_me }} {{ form.about_me.errors }}
+            
+            {{ form.accept_politics.label_tag }} <a href="{% url 'politics' %}">Política de privacidad</a>
+            {{ form.accept_politics }} {{ form.accept_politics.errors }}
+            <input type="submit" value="Registrar" class="button-reg">
+        </form>
+          <p>¿Ya tienes una cuenta? <a class="link-reg" href="{% url 'login' %}">Iniciar sesión</a></p>
+      </div>
+  </section>
+  
+
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+
+{% endblock %}
+

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Suscribe{% endblock %}
+{% block extra_styles %}{% load static %}<link rel="stylesheet" href="{% static 'css/specific/login.css' %}">{% endblock %}
+
+{% block content %}
+{% load static %}
+
+    <!-- Header -->
+    <header id="header" class="alt">
+        <div class="logo"><a href="{% url 'index' %}">Skate blog <span></span></a></div>
+        <a href="#menu">Menu</a>
+    </header>
+
+    <!-- Section Header -->
+    <section id="two" class="wrapper style3">
+        <div class="inner">
+            <header class="align-center">
+                <h2>Suscripción</h2>
+            </header>
+        </div>
+    </section>
+
+    <!-- Subscription Form -->
+    <div class="login-box">
+        <h2>Suscribirse</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="user-box">
+                    <!-- Icon (you might need to change this depending on the field type) -->
+                    <i class="fas fa-user"></i>
+                    <p>{{ field.label_tag }}</p>
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <input type="submit" value="Suscribirse" class="button_login" >
+            </a>
+
+            {% if next %}
+            <input type="hidden" name="next" value="{{ next }}" />
+            {% endif %}
+        </form>
+
+        <!-- Messages -->
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    </div>
+
+{% endblock %}
