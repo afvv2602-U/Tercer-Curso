@@ -1,25 +1,23 @@
 def main():
-    # n, z = calculo_p_q(5, 17) # La multiplicacion de los dos numeros tiene que ser mayor que 27
+    n, z = calculo_p_q(5, 11) # La multiplicacion de los dos numeros tiene que ser mayor que 27
         
     # Clave publica
-    # k = coprimo(z)
-    
+    k = coprimo(z)
+
     # Clave privada
-    # j = find_j(k, z)
+    j = find_j(k, z)
 
     print(f'valor n {n} valor de z {z} valor k {k} valor de j {j}')
 
-    # mensaje = 'HOLASOYPEDROMEENCANTANADARYHACERSKATE'
-
-    mensaje = 'IMMUNEINSTITUTE'
-    ver_letras_limpias(mensaje)
+    # ver_letras_limpias(mensaje)
+    mensaje = ''
     cifrado_num,cifrado_letras = encriptar(mensaje, k, n)
 
     print(f'Mensaje encriptado: {cifrado_num}{cifrado_letras}')
-
+    
     mensaje_desencr = desencriptar(cifrado_num, j, n)
 
-    print(f'Mensaje desencriptado: {"".join([ALFABETO[M] for M in mensaje_desencr])}')
+    print(f'Mensaje desencriptado: {"".join([ALFABETO2[M] for M in mensaje_desencr])}')
 
 # Calcula y devuelve el n y z    
 def calculo_p_q(p, q):
@@ -82,5 +80,6 @@ def desencriptar(mensaje, j, n):
     return descifrado
 
 if __name__ == '__main__':
-    ALFABETO = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+    ALFABETO = "1234567890"
+    ALFABETO2 = 'ABCDEFGHIJKLMN.OPQRSTUVWXYZ '
     main()
