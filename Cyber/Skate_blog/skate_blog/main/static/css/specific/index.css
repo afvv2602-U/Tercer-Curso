@@ -1,0 +1,53 @@
+/* static/css/specific/index.css */
+.post-image {
+    width: 400px;
+    height: 600px;
+    object-fit: cover; /* Esto asegura que la imagen cubra completamente el área, pero puede ser recortada */
+}
+
+
+.carousel-control-prev-icon, 
+.carousel-control-next-icon {
+    background-image: none !important; /* Esto oculta las flechas originales */
+}
+
+
+.carousel-control-prev-icon:after, 
+.carousel-control-next-icon:after {
+        content: ' ';
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+    }
+
+    .carousel-control-prev-icon:after {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E") no-repeat center center;
+    }
+
+    .carousel-control-next-icon:after {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0L10.293 8l-4.939 4.354a.5.5 0 0 1-.708-.708L9.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") no-repeat center center;
+    }
+/* Logo-index*/
+
+.index_logo{
+	width: 50px;
+	height: 50px;
+}
+
+.blur-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.blur-image img {
+    filter: blur(5px);
+    margin: 0;  /* Esto asegura que el efecto `.image.fit` se mantiene */
+}
+
+.align-center-btn-premium-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}

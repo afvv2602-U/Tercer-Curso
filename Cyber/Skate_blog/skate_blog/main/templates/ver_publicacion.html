@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Skate Blog {% endblock %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/specific/ver_post.css' %}">
+
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<header id="header" class="alt">
+  <div class="logo"><a href="{% url 'index' %}">Skate blog <span></span></a></div>
+  <a href="#menu">Menu</a>
+</header>
+
+<!-- Header-->
+<section id="two" class="wrapper style3">
+  <div class="inner">
+      <header class="align-center">
+          <p>Blog</p>
+          <h1>{{ publicacion.titulo }}</h1>
+      </header>
+  </div>
+</section>
+
+<div id="content-container">
+  {% if publicacion.imagen %}
+  <img src="{{ publicacion.imagen.url }}" class="card-img-top" alt="{{ publicacion.titulo }}">
+  {% endif %}
+  <div class="card_content">
+    <p  >{{ publicacion.contenido | safe }}</p>
+  </div>
+    <h2>Comentarios</h2>
+    <ul id="comments">
+      {% for comentario in comentarios %}
+        <li class="comment">
+            <img class="profile-image" src="{% static 'images/profile-placeholder.png' %}" alt="User Profile">
+            <div>
+                <span class="user">{{ comentario.usuario }}:</span> {{ comentario.texto }}
+            </div>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <h3>Agregar Comentario</h3>
+    <form id="add-comment" method="post" action="{% url 'agregar_comentario' publicacion.id %}">
+      {% csrf_token %}
+      <textarea name="texto" placeholder="Escribe tu comentario aquí"></textarea>
+      <input type="submit" value="Comentar">
+    </form>
+</div>
+
+<footer id="footer">
+  <div class="container">
+    <ul class="icons">
+      <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+      <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+      <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+    </ul>
+  </div>
+        
+  <div class="copyright">
+    <img style="width: 100px; height: 100px;" src="{% static 'images/posts/logo_skateblog.png' %}">
+  </div>
+</footer>
+{% endblock %}

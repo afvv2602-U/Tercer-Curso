@@ -1,0 +1,17 @@
+
+{% block content %}
+  <h1>Lista de Publicaciones</h1>
+  <ul>
+    {% for publicacion in publicaciones %}
+      <li>
+        <h2 href="{% url 'ver_publicacion' publicacion.id %}" >{{ publicacion.titulo }}</h2>
+            {{ publicacion.contenido | safe }}
+                
+                <!-- Mostrar imagen -->
+          <img src="{{ publicacion.imagen.url }}" decoding="auto" width="750em" height="750em"></img>
+      </li>
+    {% endfor %}
+  </ul>
+
+  
+{% endblock %}

@@ -1,0 +1,74 @@
+.btn-premium {
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: -webkit-gradient(linear,left top, right top,from(#77530a),color-stop(#ffd277),color-stop(#77530a),color-stop(#77530a),color-stop(#ffd277),to(#77530a));
+  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  overflow: hidden;
+}
+
+.btn-premium::before {
+  position: absolute;
+  content: "SUBSCRIBE";
+  color: #ffd277;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-size: 200%;
+}
+
+.btn-premium:hover {
+  background-position: right;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.btn-premium:hover::before {
+  background-position: right;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.btn-premium:active {
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.align-center-btn-premium {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+

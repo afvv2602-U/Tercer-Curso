@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %} 
+{% block title %} Skate Blog {% endblock %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/components/btn-premium.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock %}
+    {% block content %}
+    {% load static %}
+
+
+	<!-- Header -->
+		<header id="header" class="search-header">
+			<div class="logo"><a href="{% url 'index' %}"><img style = "width: 40px;height: 40px;" src = "{% static "images/posts/logo_skateblog.png" %}"><span></span></a></div>
+			<a href="#menu">Menu</a>
+		</header>
+        
+      
+            <section id="two" class="wrapper style3">
+                <div class="inner">
+                    <header class="align-center">
+                        <form class = "search-form" method="get" >
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </header>
+                </div>
+            </section>
+            <!-- Search Form -->
+            <section class="search_results">  
+                <div class="container-fluid"> 
+                    <!-- Display Filtered Posts -->
+                    <div class="row">
+                        {% for post in posts %}
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 d-flex">  <!-- Moved d-flex here -->
+                                <div class="card h-100 flex-column"> <!-- Moved flex-column here -->
+                                    <a href="{{ post.get_absolute_url }}" class="button alt d-block flex-grow-1" style="height: 100%;">  <!-- Added d-block and flex-grow-1 here -->
+                                        <img src="{{ post.imagen.url }}" class="card-img-top" alt="{{ post.titulo }}" style="height: 500px; width: 100%; object-fit: cover;">
+                                    </a>
+                                    <div class="card-body mt-auto">
+                                        <h5 class="card-title text-center m-0">{{ post.titulo }}</h5> 
+                                    </div>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <div class="col-12">
+                                <p id="no_posts">No posts found.</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            
+            
+        <!-- Footer -->
+	<footer id="footer" style="background-color: #ffc107;">
+		<div class="container">
+		  <ul class="icons">
+			<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+			<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		  </ul>
+		</div>
+    </footer>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+<!-- main/templates/edit_profile.html -->
+{% extends "base.html" %}
+{% block title %} Edit Profile {% endblock %}
+{% block content %}
+{% load static %}
+
+
+<!-- Menu -->
+<header id="header" class="alt">
+    <div class="logo">
+        <a href="{% url 'index' %}">
+            <img style="width: 40px; height: 40px;" src="{% static "images/posts/logo_skateblog.png" %}">
+            <span></span>
+        </a>
+    </div>
+    <a href="#menu">Menu</a>
+</header>
+
+  <!-- Header-->
+  <section id="two" class="wrapper style3">
+    <div class="inner">
+        <header class="align-center">
+            <p>Edit Profile</p>
+        </header>
+    </div>
+</section>
+
+<div class="container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+
+    <!-- Footer -->
+    <footer id="footer" style="background-color: #ffc107;">
+        <div class="container">
+        <ul class="icons">
+            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        </ul>
+        </div>
+    </footer>
+
+{% endblock %}
