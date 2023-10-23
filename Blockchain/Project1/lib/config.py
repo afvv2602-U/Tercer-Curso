@@ -1,16 +1,9 @@
-from bitcoin import SelectParams
-from bitcoin.base58 import decode
-from bitcoin.core import x
-from bitcoin.wallet import CBitcoinAddress, CBitcoinSecret, P2PKHBitcoinAddress
+from bitcoinlib.keys import HDKey, Address
 
+# Configuramos para usar testnet en bitcoinlib
+network_type = 'testnet'
 
-SelectParams('testnet')
-
-faucet_address = CBitcoinAddress('mv4rnyY3Su5gjcDNzbMLKBQkBicCtHUtFB')
-
-# For questions 1-3, we are using 'btc-test3' network.
-network_type = 'btc-test3'
-
+faucet_address = Address('mgd5EmL1xvKCx2C3nPrpi1ps7gbp4raNCb', network=network_type)
 
 ######################################################################
 # This section is for Questions 1-3
@@ -19,9 +12,10 @@ network_type = 'btc-test3'
 # Create a private key and address pair in Base58 with keygen.py
 # Send coins at https://coinfaucet.eu/en/btc-testnet/
 
-my_private_key = CBitcoinSecret(
-    'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+my_private_key_wif = 'tprv8jfAS6FgmzpbvPtPcfqR8Y8p7KheFCPjcChCrmYAkWkUF4KvvUFkCkPCocuGuRGA2RkJthFLWQErf9YLD8YSFFz1ykFnBGhf1gUwfyt2Tri'
 
-my_public_key = my_private_key.pub
-my_address = P2PKHBitcoinAddress.from_pubkey(my_public_key)
+# Convert the HD private key to an HDKey object and get the associated address
+key = HDKey(my_private_key_wif, network=network_type)
+my_private_key = key.wif()
+my_address = key.address()
 ######################################################################
