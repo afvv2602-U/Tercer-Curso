@@ -3,7 +3,7 @@ from bitcoinlib.keys import HDKey, Address
 # Configuramos para usar testnet en bitcoinlib
 network_type = 'testnet'
 
-faucet_address = Address('mgd5EmL1xvKCx2C3nPrpi1ps7gbp4raNCb', network=network_type)
+faucet_address = Address('myuAFy5MxZpmfUfc8pGmdy7eLMMjX5rzju', network=network_type)
 
 ######################################################################
 # This section is for Questions 1-3
@@ -12,7 +12,7 @@ faucet_address = Address('mgd5EmL1xvKCx2C3nPrpi1ps7gbp4raNCb', network=network_t
 # Create a private key and address pair in Base58 with keygen.py
 # Send coins at https://coinfaucet.eu/en/btc-testnet/
 
-my_private_key_wif = 'tprv8jfAS6FgmzpbvPtPcfqR8Y8p7KheFCPjcChCrmYAkWkUF4KvvUFkCkPCocuGuRGA2RkJthFLWQErf9YLD8YSFFz1ykFnBGhf1gUwfyt2Tri'
+my_private_key_wif = 'tprv8jBbr7HRyWRvHgLGwLWYurbozkhvzdXdoLCe4A7P9gjVa6SHwCCibZDuDGZ75RkmiU5E9xboKW5HttapPGqXEXvkzZq2CCHEPZ9A8PesLvB'
 
 # Convert the HD private key to an HDKey object and get the associated address
 key = HDKey(my_private_key_wif, network=network_type)
