@@ -15,7 +15,6 @@ def eje_1():
     data = pd.read_excel("Datasets\pokemon_Pandas.xlsx")
     Sp = data.Sp_Atk.isnull().sum()
     Hp = data.HP.isnull().sum()
-
     print(f'Sp null {Sp}, Hp null {Hp}')
 
 def eje_2():

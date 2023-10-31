@@ -82,6 +82,29 @@ def fill_na():
 
     data.Metal.fillna("no info",inplace=True) # Actualizamos los NA de metal a no info
 
+# Extraer datos
+def extract_data():
+    subset_string =  data.select_dtypes(include=[object]) # Dentro de los corchetes especificamos el tipo de dato que queremos
+    subset_float = data.select_dtypes(include=[float]) # En esta caso float
+
+    # Extraer valores entre dos numeros dentro de una variable
+    atomicNumberBetween = data[data['AtomicNumber'].between(25,30)] # Saca todas las filas entre el valor 25 y 30 usando between
+
+    # Extraer todas las filas que contengan un valor
+    data.loc[data.Phase.str.contains('gas'),:] # Sacamos todas las filas donde aparece gas en la variables Phase
+
+    # Extraer la primera letra de los valores de una variable
+    data['letra'] = data['Discoverer'].astype(str).str[0] # Sacamos la primera letra de cada descubridor y creamos una columna nueva con esos valores
+
+    # Extraer dos valores distintos de la misma variable (ISIN)
+    data.loc[data.Phase.isin(['gas','solid']),:] # Sacamos todas las filas que contengan gas o solid en la variable Phase
+
+    # Sacar la primera palabra de una columna entera
+    data['nuevo'] = data.Discoverer.str.split().str.get(0) # Creamos una nueva columna con la primera palabra de la variable Discoverer
+
+# Ordenar valores
+def sort_values():
+    cols = data.loc[:,['Year','AtomicNumber','Element']].sort_values(by='Year',ascending=1) # Ordenamos las filas por orden ascendente 1 o Descendente 0 en base a Year
 
 if __name__ == "__main__":
     data = pd.read_csv("Datasets\Periodic Table of Elements.csv")
