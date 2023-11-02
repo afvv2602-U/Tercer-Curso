@@ -106,6 +106,38 @@ def extract_data():
 def sort_values():
     cols = data.loc[:,['Year','AtomicNumber','Element']].sort_values(by='Year',ascending=1) # Ordenamos las filas por orden ascendente 1 o Descendente 0 en base a Year
 
+# Estadisticas del dataframe
+def stats():
+    data.max() # Nos da los valores maximos de cada variables, En numeros el maximo en str los que tengan z
+    data.min() # Nos da valores minimos
+    data.mean() # Nos da la media
+    data.sum() # Nos hace una suma de todos
+    data.Phase.value_counts() # Nos enseña los valores de una variables y cuantas veces se repite
+    data.count() # Nos cuenta los valores que hay en cada variable
+
+    # Correlaciones
+    data.AtomicMass.corr(data.AtomicRadius) # Cuanto mas se acerquen a 1 estan mas correlacionadas 0 No
+    data.corrwith(data.AtomicMass) # Vemos la relacion de AtomicMass frente al resto de variables
+    tabla_correlaciones = data.corr() # Creamos una tabla con todas las variables correlacionas
+
+def group_by():
+    # as_index = False es para que Phase no sea el index de los valores agrupados
+    x = data.groupby(by=['Phase'],as_index=False).sum() # Agrupamos todas las variables sumadas, en phase 
+    z = data.groupby(by=['Phase','AtomicMass'],as_index=False).mean()
+
+    data.groupby('Phase')['Symbol'].count() 
+    data.Phase.value_counts() # Lo mismo escrito distinto
+
+    data.groupby('Phase').count()['gas']
+    data.Phase.value_counts()['gas']
+
+    # Agrupamos en Phase y Type, con la funcion agg Creamos tres columnas que cogen el MAX, MIN y MEAn de BoilingPoint
+    # Y reseteamos el index para que sean numeros y no Phase \ la barra sirve para seguir la instruccion en otra linea
+    x = data.loc[:,['BoilingPoint','Phase','Type']].groupby(by=['Phase','Type'])\
+    .agg(MAX=('BoilingPoint','max'),MIN=('BoilingPoint','min'),MEAN=('BoilingPoint','mean'))\
+    .reset_index()
+    
+
 if __name__ == "__main__":
     data = pd.read_csv("Datasets\Periodic Table of Elements.csv")
     main()
