@@ -136,7 +136,51 @@ def group_by():
     x = data.loc[:,['BoilingPoint','Phase','Type']].groupby(by=['Phase','Type'])\
     .agg(MAX=('BoilingPoint','max'),MIN=('BoilingPoint','min'),MEAN=('BoilingPoint','mean'))\
     .reset_index()
+
+# Reemplazar variables
+def replace_values():
+
+    # Reemplazar valores numericos
+    data.Group.replace(to_replace= 1, value=100, inplace=True) # Cambiamos el valor 1 por el 100
+    data.Group.replace(to_replace= (1,18), value=(100,1800), inplace=True) # Cambiamos el valor 1 por el 100 y el 18 por el 1800
+
+    # Reemplazar tipo texto
+    data.Phase.replace(to_replace=['gas'], value=['GASESSSSSS'],inplace=True) # Cambiamos Gas por GASESSSS
+    data.Phase.replace(to_replace=['gas','solid'], value=['GASESSSSSS','solidoossss'],inplace=True)
+
+def crosstab():
+
+    # Es una tabla que muestra la relacion entre dos variables
+    x = pd.crosstab(data.Phase,data.NumberOfShells) # Te hace un count de las variables y las veces que aparecen, pero usando dos variables
+    data.NumberOfShells.value_counts() # Te hace un conteo de las veces que aparece cada variable
+
+    # Porcentaje to total de toda la tabla
+    x = pd.crosstab(data.Phase,data.NumberOfShells,normalize='all') # Porcentaje total de toda la tabla
+    x = pd.crosstab(data.Phase,data.NumberOfShells,normalize='columns') # Porcentaje total por columnas 
+    x = pd.crosstab(data.Phase,data.NumberOfShells,normalize='index') # Porcentaje total por filas
+
+def other_commands():
+    # Nos muestra una lista con todos los valores que hay en esa variable
+    data.Type.unique()
+    data.Phase.unique()
+
+    # Nos muestra el numero total de datos que no son unicos dentro de esta variable
+    data.Type.nunique()
+
+    # pd.cut te permite crear una nueva columna en base a los valores de una variable
+    data['letras'] = pd.cut(data.AtomicMass,bins=[0,100,200,300],labels=['Bajo','Medio','Alto'])
+    data['letras'] = pd.cut(data.AtomicMass,bins=[data.AtomicMass.min(),data.AtomicMass.mean(),data.AtomicMass.mean()*2,data.AtomicMass.max()],
+                            labels=['Bajo','Medio','Alto']) # Otro modo de hacerlo usando los valores de las variables
+
+def transform_variables():
+
+    data['Group'] = pd.to_numeric(data['Group'],downcast='float') # transformar de tipo Int a tipo Float
+    data['Group'] = data.Group.astype(str) # transformar de tipo float a tipo string
+
+   
     
+
+
 
 if __name__ == "__main__":
     data = pd.read_csv("Datasets\Periodic Table of Elements.csv")

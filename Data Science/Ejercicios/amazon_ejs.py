@@ -44,8 +44,6 @@ def eje_35():
     x = data.loc[(data.State == 'Texas')&(data.Bill < 300)&(data.HoursUntilDelivery < 200)].groupby(by=['City','Year']).sum()\
     .sort_values(by='Bill',ascending=0).drop_duplicates(subset=['OrderYear'],keep='first')
     print(x)
-    
-
 
 if __name__ == "__main__":
     data = pd.read_excel("Datasets\Exam_Amazon_Shipments.xlsx")
