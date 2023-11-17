@@ -1,6 +1,0 @@
-7 3 OP_2DUP OP_ADD op_verify 10 OP_DROP op_sub op_verify 4 
-
-Resuelve la ecuacion
-
-x + y = 10
-x - y = 4
