@@ -17,8 +17,6 @@ def revision_dataset():
     info_general, valores_faltantes
 
 def limpieza_dataset():
-    # Limpiando y preparando los datos para luego mostrar los graficos.
-
     # Convertir 'date_of_birth' a tipo fecha
     ufc_data['date_of_birth'] = pd.to_datetime(ufc_data['date_of_birth'], errors='coerce')
 
@@ -27,7 +25,6 @@ def limpieza_dataset():
     ufc_data['age'] = current_year - ufc_data['date_of_birth'].dt.year
 
     # Reemplazando valores faltantes en 'height_cm', 'weight_in_kg', y 'reach_in_cm' con la media
-    # Esto es una simplificación y podría no ser el mejor método en todos los casos
     ufc_data['height_cm'].fillna(ufc_data['height_cm'].mean(), inplace=True)
     ufc_data['weight_in_kg'].fillna(ufc_data['weight_in_kg'].mean(), inplace=True)
     ufc_data['reach_in_cm'].fillna(ufc_data['reach_in_cm'].mean(), inplace=True)
@@ -40,18 +37,18 @@ def primera_figura():
     # Creando un gráfico de barras para visualizar la distribución de victorias, derrotas y empates
     fig, axes = plt.subplots(1, 3, figsize=(18, 6))
     
-    # Victories
+    # Victorias
     ufc_data['wins'].plot(kind='hist', bins=20, color='green',range=(0,50),edgecolor='black', ax=axes[0])
     axes[0].set_title('Distribución de Victorias')
     axes[0].set_xlabel('Victorias')
     axes[0].set_ylabel('Frecuencia')
     
-    # Losses
+    # Derrotas
     ufc_data['losses'].plot(kind='hist', bins=20, color='red',range=(0,35),edgecolor='black', ax=axes[1])
     axes[1].set_title('Distribución de Derrotas')
     axes[1].set_xlabel('Derrotas')
     
-    # Draws
+    # Empates
     ufc_data['draws'].plot(kind='hist', bins=20, color='blue', range=(0,6), edgecolor='black',ax=axes[2])
     axes[2].set_title('Distribución de Empates')
     axes[2].set_xlabel('Empates')
@@ -123,34 +120,32 @@ def cuarta_figura():
     # Utilizamos pd.cut para crear la nueva columna 'weight_class'
     ufc_data['weight_class'] = pd.cut(ufc_data['weight_in_kg'], bins=bins, labels=labels, include_lowest=True)
     
-    # Removemos cualquier fila donde 'stance' sea NaN para evitar problemas en el agrupamiento
+    # Eliminamos cualquier fila donde 'stance' sea NaN para evitar problemas en el agrupamiento
     ufc_data_clean = ufc_data.dropna(subset=['stance'])
     
-    # Group the data by 'weight_class' and 'stance' to get the count of fighters
+    # Agrupamos en torno a 'weight_class' y 'stance'
     grouped_data = ufc_data_clean.groupby(['weight_class', 'stance']).size().unstack(fill_value=0)
     
-    # We will normalize the grouped data for better color mapping in heatmap
-    normalized_grouped_data = grouped_data.div(grouped_data.sum(axis=1), axis=0)
+    # Normalizamos los datos para que se muestren mejor los datos en el mapa de calor
+    heatmap_data = grouped_data.div(grouped_data.sum(axis=1), axis=0)
     
-    # Create the heatmap using matplotlib
+    # Creamos el mapa de calor
     fig, ax = plt.subplots(figsize=(12, 8))
-    cax = ax.matshow(normalized_grouped_data, cmap='coolwarm')
+    cax = ax.matshow(heatmap_data, cmap='coolwarm')
     
-    # Add color bar
     plt.colorbar(cax)
     
-    # Set the ticks and labels for the axes
-    ax.set_xticks(np.arange(len(grouped_data.columns)))
-    ax.set_xticklabels(grouped_data.columns, rotation=90)
-    ax.set_yticks(np.arange(len(grouped_data.index)))
-    ax.set_yticklabels(grouped_data.index)
+    ax.set_xticks(np.arange(len(heatmap_data.columns)))
+    ax.set_xticklabels(heatmap_data.columns, rotation=90)
+    ax.set_yticks(np.arange(len(heatmap_data.index)))
+    ax.set_yticklabels(heatmap_data.index)
     
-    # Add the title and labels
+    # Añadimos los nombres a la variables y el titulo
     plt.title('Heatmap of Stance Distribution by Weight Class')
     plt.xlabel('Stance')
     plt.ylabel('Weight Class')
     
-    # Show the plot
+    # Mostramos el mapa
     plt.show()
         
 # Comparación de la eficacia de diferentes estilos de lucha
