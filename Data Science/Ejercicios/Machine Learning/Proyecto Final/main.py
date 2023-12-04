@@ -104,5 +104,87 @@ plot_clusters(normalized_data, labels, centers, [0, 2], 'Edad vs Educación')
 plot_clusters(normalized_data, labels, centers, [1, 2], 'Ingreso Mensual vs Educación')
 
 
-#%%
+#%% Random forest y Decision Tree
 
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import classification_report, accuracy_score
+from sklearn.preprocessing import LabelEncoder
+
+# Preprocesamiento de la variable objetivo "Attrition"
+# Convertimos 'Yes' en 1 y 'No' en 0
+label_encoder = LabelEncoder()
+data['Attrition'] = label_encoder.fit_transform(data['Attrition'])
+
+# Preprocesamiento de las características
+# 'CF_age band' y 'Education' ya están preprocesados en los pasos anteriores para clusterización.
+# Necesitamos asegurarnos de que 'Monthly Income' está en el formato correcto.
+features = data[['CF_age band', 'Monthly Income', 'Education']].copy()
+
+# Convertir 'CF_age band' y 'Education' de categóricas a numéricas si aún no se ha hecho
+features['CF_age band'] = label_encoder.fit_transform(features['CF_age band'])
+features['Education'] = label_encoder.fit_transform(features['Education'])
+
+# Dividir los datos en conjuntos de entrenamiento y prueba
+X_train, X_test, y_train, y_test = train_test_split(
+    features, 
+    data['Attrition'], 
+    test_size=0.3, 
+    random_state=42
+)
+
+# Entrenar un modelo de Decision Tree
+dt_classifier = DecisionTreeClassifier(random_state=42)
+dt_classifier.fit(X_train, y_train)
+
+# Entrenar un modelo de Random Forest
+rf_classifier = RandomForestClassifier(random_state=42)
+rf_classifier.fit(X_train, y_train)
+
+# Realizar predicciones con ambos modelos
+dt_predictions = dt_classifier.predict(X_test)
+rf_predictions = rf_classifier.predict(X_test)
+
+# Evaluar el rendimiento de los modelos
+dt_accuracy = accuracy_score(y_test, dt_predictions)
+rf_accuracy = accuracy_score(y_test, rf_predictions)
+
+dt_report = classification_report(y_test, dt_predictions)
+rf_report = classification_report(y_test, rf_predictions)
+
+# Precision de Decision Tree
+dt_accuracy
+
+# Precision del Random Forest
+rf_accuracy
+
+# Resultados de Decision tree
+dt_report 
+
+# Resultados del Random Forest
+rf_report
+
+#%% Importancia de los datos
+
+# Para explorar las características importantes, vamos a utilizar el atributo feature_importances_ de cada modelo entrenado.
+# Primero, extraeremos las importancias de las características para el modelo de Decision Tree y Random Forest.
+
+# Importancia de las características para el Decision Tree
+dt_feature_importances = dt_classifier.feature_importances_
+
+# Importancia de las características para el Random Forest
+rf_feature_importances = rf_classifier.feature_importances_
+
+# Crear un DataFrame para comparar las importancias
+feature_names = features.columns
+importances_df = pd.DataFrame({
+    'Feature': feature_names,
+    'DT Importance': dt_feature_importances,
+    'RF Importance': rf_feature_importances
+})
+
+# Ordenar por importancia para el Random Forest
+importances_df.sort_values(by='RF Importance', ascending=False, inplace=True)
+
+importances_df
