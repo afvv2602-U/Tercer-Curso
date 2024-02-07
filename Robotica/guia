@@ -1,0 +1,114 @@
+*ros2 run turtlesim turtlesim_node : Ejecutas el entorno de ROS con una tortuga
+*ros2 run turtlesim turtle_teleop_key : Ejecutas el nodo teleop que permite mover a la tortuga
+*rqt : Permite controlar el entorno de ROS de un modo grafico.
+*rqt_graph: Muestra todos los nodos y topics y las conexiones entre ellos
+
+Topics: Solo unidireccionales
+--ros2 topic list : Muestra la lista de los topics (-t para mostrar la ruta)
+--ros2 topic echo /turtle1/cmd_vel : Creas un listener del topic cmd_vel para ver los parametros que esta recibiendo
+--ros2 topic info /turtle1/cmd_vel : Ves la info del topic cmd_vel
+
+Nodes: Se usan para comunicar servicios
+--ros2 node list : Ejecutar la lista de nodos (Los que estan activos en la simulacion)
+--ros2 node info <node_name> : Muestra la informacion del nodo deseado
+
+Services: Es un request/response pattern que usa los nodos para comunicarse 
+--ros2 service list: Muestra la lista de todos los servicios (-t muestra rutas)
+--ros2 service type <service_name> : Devuelve el tipo de servicio para poder buscar informacion luego
+--*ros2 service type /clear
+--ros2 service find <type_name> : Nos devuelve los servicios que son de ese tipo
+--*ros2 interface show std_srvs/srv/Empty
+--ros2 interface show <type_name> : Muestra los argumentos de ese tipo de servicio
+--*ros2 interface show turtlesim/srv/Spawn 
+--ros2 service call <service_name> <service_type> <arguments> : Ejecutar un servicio
+--*ros2 service call /clear std_srvs/srv/Empty
+--*ros2 service call /spawn turtlesim/srv/Spawn "{x: 2, y: 2, theta: 0.2, name: ''}"
+
+Parameters: Son los valores de los nodos (Int, float, bool, str...)
+--ros2 param list: Muestra una lista de todos los parametros y al nodo que corresponden
+--ros2 param get <node_name> <parameter_name>: Devuelve el valor de un parametro de un nodo especifico
+--*ros2 param get /turtlesim background_g
+--ros2 param set <node_name> <parameter_name> <value>: Establece un valor para un parametro
+--*:ros2 param set /turtlesim background_r 150
+
+Actions: Las acciones utilizan un modelo cliente-servidor, similar al modelo de publicador-suscriptor. Un nodo "cliente de acción" envía un objetivo a un nodo "servidor de acción", que reconoce el objetivo(goal) y devuelve un flujo de retroalimentación(feedback) y un resultado (Result).
+
+--*ros2 node info /turtlesim : Muestra las actions del nodo turtlesim
+--ros2 action list
+--ros2 action info /turtle1/rotate_absolute
+--ros2 interface show turtlesim/action/RotateAbsolute : Devuelve los valores
+--ros2 action send_goal <action_name> <action_type> <values> : Ejecutar una accion con los parametros
+--*ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute "{theta: 1.57}"
+--*ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute "{theta: -1.57}" --feedback
+
+RQT : Entorno grafico
+--ros2 run rqt_console rqt_console : Ejecutar el rqt para ros2
+--*ros2 topic pub -r 1 /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}"
+--*ros2 run turtlesim turtlesim_node --ros-args --log-level WARN : Cambiar el tipo de log
+----*Fatal
+----*Warn
+----*Error
+----*Info
+----*Debug
+
+
+Ejecutar codigo py
+--*ros2 launch turtlesim multisim.launch.py
+
+Publicar actions
+--*ros2 topic pub  /turtlesim1/turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.8}}"
+
+Guardar simulaciones.
+1.ros2 topic list: Vemos los topic
+2.ros2 topic echo /turtle1/cmd_vel : Crear listener
+3.ros2 bag record <topic_name>
+3.5 ros2 bag record <topic_name>
+4.ros2 bag record -o subset /turtle1/cmd_vel /turtle1/pose : Guardar dos topics
+5.ros2 bag info <bag_file_name> : Ver la info del archivo de la simulacion
+6.ros2 bag play <bag_file_name> : Runnear la simulacion guardada
+
+Colcon (Package Generator)
+--*git clone https://github.com/ros2/examples src/examples -b iron
+--*colcon build --symlink-install
+--colcon test
+--source install/setup.bash
+--*ros2 pkg create <Package_name>: Crear paquete 
+
+Guardar y cargar configuraciones.
+--ros2 param dump <node_name> : Crear un archivo de configuracion
+--*ros2 param dump /turtlesim > turtlesim.yaml
+--ros2 param load <node_name> <parameter_file> : Cargamos la configuracion del archivo yaml
+--*ros2 param load /turtlesim turtlesim.yaml
+
+TEORIA.
+
+    Nodes (Nodos):
+        Un nodo en ROS2 es una entidad que ejecuta un proceso. Los robots en ROS2 están compuestos de múltiples nodos, cada uno realizando una función específica (por ejemplo, control de sensores, actuadores, procesamiento de datos).
+        Cada nodo es independiente y puede comunicarse con otros nodos a través del sistema de mensajes de ROS2.
+
+    Topics (Temas):
+        Los topics son canales de comunicación utilizados para que los nodos intercambien mensajes. Son la forma principal de comunicación en ROS2.
+        Un nodo publica un mensaje en un topic, y otros nodos que estén suscritos a ese topic pueden recibir ese mensaje. Esto es útil para datos que deben ser transmitidos frecuentemente, como lecturas de sensores o estados de actuadores.
+
+    Services (Servicios):
+        Los servicios en ROS2 son otra forma de comunicación entre nodos, pero a diferencia de los topics, se utilizan para interacciones de solicitud-respuesta.
+        Un nodo ofrece un servicio, y otro nodo puede llamar a este servicio, enviando un mensaje de solicitud y esperando una respuesta. Esto es útil para interacciones que no necesitan una transmisión continua de datos, como solicitar que un robot realice una tarea específica.
+
+    Actions (Acciones):
+        Las acciones en ROS2 son una forma de comunicación diseñada para interacciones que toman un tiempo considerable para completarse y donde se requiere feedback durante su ejecución.
+        Un ejemplo podría ser un robot navegando a una ubicación. A través de una acción, un nodo puede enviar una solicitud de inicio de la tarea, recibir actualizaciones sobre el progreso y obtener una respuesta cuando la tarea se haya completado.
+
+Diferencias Clave:
+
+    Topics vs Services: Los topics son para transmisión de datos continua y unidireccional, mientras que los services son para interacciones específicas de solicitud-respuesta.
+    Services vs Actions: Ambos son para solicitudes específicas, pero las actions proporcionan feedback y pueden ser canceladas durante su ejecución, lo
+
+cual es ideal para tareas de larga duración.
+
+En resumen:
+
+    Nodes: Procesos independientes dentro de una aplicación robótica.
+    Topics: Canales para la transmisión continua y unidireccional de mensajes.
+    Services: Interacciones de solicitud-respuesta para tareas específicas.
+    Actions: Utilizadas para tareas largas que requieren feedback y la posibilidad de ser canceladas.
+

@@ -1,0 +1,22 @@
+[0.878s] Invoking command in '/home/randy/Documents/Robotica/workspace/src/examples/rclpy/guard_conditions': AMENT_PREFIX_PATH=/home/randy/Documents/Robotica/workspace/install/examples_rclpy_guard_conditions:${AMENT_PREFIX_PATH} PYTEST_ADDOPTS=--tb=short --junit-xml=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions/pytest.xml --junit-prefix=examples_rclpy_guard_conditions -o cache_dir=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions/.pytest_cache PYTHONPATH=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions:/home/randy/Documents/Robotica/workspace/install/examples_rclpy_guard_conditions/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -m pytest
+[1.646s] [1m============================= test session starts ==============================[0m
+[1.646s] platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+[1.646s] cachedir: /home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions/.pytest_cache
+[1.647s] rootdir: /home/randy/Documents/Robotica/workspace/src/examples/rclpy, configfile: pytest.ini
+[1.647s] plugins: ament-xmllint-0.14.2, ament-lint-0.14.2, ament-copyright-0.14.2, launch-testing-ros-0.24.0, ament-flake8-0.14.2, ament-pep257-0.14.2, launch-testing-2.0.2, colcon-core-0.15.1, cov-3.0.0
+[1.647s] [1mcollecting ... [0m[1m
+[1.647s] collected 3 items                                                              [0m
+[1.648s] 
+[1.648s] test/test_copyright.py [32m.[0m[32m                                                 [ 33%][0m
+[1.648s] test/test_flake8.py [32m.[0m[33m                                                    [ 66%][0m
+[1.648s] test/test_pep257.py [32m.[0m[33m                                                    [100%][0m
+[1.648s] - generated xml file: /home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions/pytest.xml -
+[1.648s] [33m======================== [32m3 passed[0m, [33m[1m2 warnings[0m[33m in 0.39s[0m[33m =========================[0m
+[1.648s] 
+[1.649s] [33m=============================== warnings summary ===============================[0m
+[1.649s] guard_conditions/test/test_flake8.py::test_flake8
+[1.649s] guard_conditions/test/test_flake8.py::test_flake8
+[1.649s]   Warning: SelectableGroups dict interface is deprecated. Use select.
+[1.649s] 
+[1.649s] -- Docs: https://docs.pytest.org/en/stable/warnings.html
+[2.331s] Invoked command in '/home/randy/Documents/Robotica/workspace/src/examples/rclpy/guard_conditions' returned '0': AMENT_PREFIX_PATH=/home/randy/Documents/Robotica/workspace/install/examples_rclpy_guard_conditions:${AMENT_PREFIX_PATH} PYTEST_ADDOPTS=--tb=short --junit-xml=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions/pytest.xml --junit-prefix=examples_rclpy_guard_conditions -o cache_dir=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions/.pytest_cache PYTHONPATH=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions:/home/randy/Documents/Robotica/workspace/install/examples_rclpy_guard_conditions/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -m pytest

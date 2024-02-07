@@ -1,0 +1,28 @@
+[5.613s] Invoking command in '/home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions': PYTHONPATH=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions/prefix_override:/home/randy/Documents/Robotica/workspace/install/examples_rclpy_guard_conditions/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions/build --no-deps install_data
+[6.214s] running develop
+[6.214s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[6.214s]   warnings.warn(
+[6.218s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[6.218s]   warnings.warn(
+[6.579s] running egg_info
+[6.580s] creating examples_rclpy_guard_conditions.egg-info
+[6.580s] writing examples_rclpy_guard_conditions.egg-info/PKG-INFO
+[6.580s] writing dependency_links to examples_rclpy_guard_conditions.egg-info/dependency_links.txt
+[6.580s] writing entry points to examples_rclpy_guard_conditions.egg-info/entry_points.txt
+[6.580s] writing requirements to examples_rclpy_guard_conditions.egg-info/requires.txt
+[6.581s] writing top-level names to examples_rclpy_guard_conditions.egg-info/top_level.txt
+[6.581s] writing manifest file 'examples_rclpy_guard_conditions.egg-info/SOURCES.txt'
+[6.582s] reading manifest file 'examples_rclpy_guard_conditions.egg-info/SOURCES.txt'
+[6.583s] writing manifest file 'examples_rclpy_guard_conditions.egg-info/SOURCES.txt'
+[6.585s] running build_ext
+[6.585s] Creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_guard_conditions/lib/python3.10/site-packages/examples-rclpy-guard-conditions.egg-link (link to .)
+[6.586s] Installing trigger_guard_condition script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_guard_conditions/lib/examples_rclpy_guard_conditions
+[6.586s] 
+[6.587s] Installed /home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions
+[6.587s] running install_data
+[6.587s] creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_guard_conditions/share/ament_index
+[6.588s] creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_guard_conditions/share/ament_index/resource_index
+[6.588s] creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_guard_conditions/share/ament_index/resource_index/packages
+[6.588s] copying resource/examples_rclpy_guard_conditions -> /home/randy/Documents/Robotica/workspace/install/examples_rclpy_guard_conditions/share/ament_index/resource_index/packages
+[6.589s] copying package.xml -> /home/randy/Documents/Robotica/workspace/install/examples_rclpy_guard_conditions/share/examples_rclpy_guard_conditions
+[7.085s] Invoked command in '/home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions' returned '0': PYTHONPATH=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions/prefix_override:/home/randy/Documents/Robotica/workspace/install/examples_rclpy_guard_conditions/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/randy/Documents/Robotica/workspace/build/examples_rclpy_guard_conditions/build --no-deps install_data

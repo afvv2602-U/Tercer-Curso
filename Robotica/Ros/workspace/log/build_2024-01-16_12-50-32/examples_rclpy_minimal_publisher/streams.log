@@ -1,0 +1,30 @@
+[3.979s] Invoking command in '/home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_publisher': PYTHONPATH=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_publisher/prefix_override:/home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_publisher/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_publisher/build --no-deps install_data
+[4.558s] running develop
+[4.559s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[4.559s]   warnings.warn(
+[4.561s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[4.562s]   warnings.warn(
+[4.967s] running egg_info
+[4.967s] creating examples_rclpy_minimal_publisher.egg-info
+[4.968s] writing examples_rclpy_minimal_publisher.egg-info/PKG-INFO
+[4.968s] writing dependency_links to examples_rclpy_minimal_publisher.egg-info/dependency_links.txt
+[4.968s] writing entry points to examples_rclpy_minimal_publisher.egg-info/entry_points.txt
+[4.968s] writing requirements to examples_rclpy_minimal_publisher.egg-info/requires.txt
+[4.969s] writing top-level names to examples_rclpy_minimal_publisher.egg-info/top_level.txt
+[4.969s] writing manifest file 'examples_rclpy_minimal_publisher.egg-info/SOURCES.txt'
+[4.972s] reading manifest file 'examples_rclpy_minimal_publisher.egg-info/SOURCES.txt'
+[4.973s] writing manifest file 'examples_rclpy_minimal_publisher.egg-info/SOURCES.txt'
+[4.976s] running build_ext
+[4.976s] Creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_publisher/lib/python3.10/site-packages/examples-rclpy-minimal-publisher.egg-link (link to .)
+[4.979s] Installing publisher_local_function script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_publisher/lib/examples_rclpy_minimal_publisher
+[4.979s] Installing publisher_member_function script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_publisher/lib/examples_rclpy_minimal_publisher
+[4.979s] Installing publisher_old_school script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_publisher/lib/examples_rclpy_minimal_publisher
+[4.979s] 
+[4.982s] Installed /home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_publisher
+[4.982s] running install_data
+[4.982s] creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_publisher/share/ament_index
+[4.983s] creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_publisher/share/ament_index/resource_index
+[4.983s] creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_publisher/share/ament_index/resource_index/packages
+[4.983s] copying resource/examples_rclpy_minimal_publisher -> /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_publisher/share/ament_index/resource_index/packages
+[4.983s] copying package.xml -> /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_publisher/share/examples_rclpy_minimal_publisher
+[5.051s] Invoked command in '/home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_publisher' returned '0': PYTHONPATH=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_publisher/prefix_override:/home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_publisher/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_publisher/build --no-deps install_data

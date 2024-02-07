@@ -1,0 +1,87 @@
+[0.302s] Invoking command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_publisher': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/topics/minimal_publisher -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher
+[0.496s] -- The C compiler identification is GNU 11.4.0
+[0.650s] -- The CXX compiler identification is GNU 11.4.0
+[0.670s] -- Detecting C compiler ABI info
+[0.833s] -- Detecting C compiler ABI info - done
+[0.850s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.852s] -- Detecting C compile features
+[0.853s] -- Detecting C compile features - done
+[0.860s] -- Detecting CXX compiler ABI info
+[1.047s] -- Detecting CXX compiler ABI info - done
+[1.077s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.078s] -- Detecting CXX compile features
+[1.079s] -- Detecting CXX compile features - done
+[1.084s] -- Found ament_cmake: 2.0.3 (/opt/ros/iron/share/ament_cmake/cmake)
+[1.492s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[1.657s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.722s] -- Found rclcpp: 21.0.4 (/opt/ros/iron/share/rclcpp/cmake)
+[1.825s] -- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+[1.854s] -- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+[1.897s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.944s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.419s] -- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+[2.427s] -- Found rmw_fastrtps_cpp: 7.1.2 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+[2.680s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.747s] -- Found FastRTPS: /opt/ros/iron/include  
+[2.839s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.357s] -- Found std_msgs: 5.0.0 (/opt/ros/iron/share/std_msgs/cmake)
+[3.459s] -- Found ament_lint_auto: 0.14.2 (/opt/ros/iron/share/ament_lint_auto/cmake)
+[3.640s] -- Added test 'copyright' to check source files copyright and LICENSE
+[3.643s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.643s] -- Configured cppcheck include dirs: 
+[3.644s] -- Configured cppcheck exclude dirs and/or files: 
+[3.646s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[3.646s] -- Configured cpplint exclude dirs and/or files: 
+[3.647s] -- Added test 'lint_cmake' to check CMake code style
+[3.650s] -- Added test 'uncrustify' to check C / C++ code style
+[3.650s] -- Configured uncrustify additional arguments: 
+[3.652s] -- Added test 'xmllint' to check XML markup files
+[3.654s] -- Configuring done
+[3.708s] -- Generating done
+[3.711s] -- Build files have been written to: /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_publisher
+[3.734s] Invoked command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_publisher' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/topics/minimal_publisher -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher
+[3.735s] Invoking command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_publisher': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_publisher -- -j12 -l12
+[4.102s] [  8%] [32mBuilding CXX object CMakeFiles/publisher_lambda.dir/lambda.cpp.o[0m
+[4.102s] [ 16%] [32mBuilding CXX object CMakeFiles/publisher_member_function.dir/member_function.cpp.o[0m
+[4.102s] [ 25%] [32mBuilding CXX object CMakeFiles/publisher_member_function_with_type_adapter.dir/member_function_with_type_adapter.cpp.o[0m
+[4.102s] [ 33%] [32mBuilding CXX object CMakeFiles/publisher_member_function_with_unique_network_flow_endpoints.dir/member_function_with_unique_network_flow_endpoints.cpp.o[0m
+[24.710s] [ 41%] [32m[1mLinking CXX executable publisher_member_function[0m
+[26.190s] [ 41%] Built target publisher_member_function
+[28.354s] [ 50%] [32m[1mLinking CXX executable publisher_lambda[0m
+[28.416s] [ 58%] [32m[1mLinking CXX executable publisher_member_function_with_unique_network_flow_endpoints[0m
+[30.209s] [ 58%] Built target publisher_member_function_with_unique_network_flow_endpoints
+[30.216s] [ 58%] Built target publisher_lambda
+[33.555s] [ 66%] [32m[1mLinking CXX executable publisher_member_function_with_type_adapter[0m
+[34.474s] [ 66%] Built target publisher_member_function_with_type_adapter
+[34.647s] [ 75%] [32mBuilding CXX object CMakeFiles/publisher_not_composable.dir/not_composable.cpp.o[0m
+[44.434s] [ 83%] [32m[1mLinking CXX executable publisher_not_composable[0m
+[44.664s] [ 83%] Built target publisher_not_composable
+[44.687s] [ 91%] [32mBuilding CXX object CMakeFiles/publisher_wait_for_all_acked.dir/member_function_with_wait_for_all_acked.cpp.o[0m
+[50.580s] [100%] [32m[1mLinking CXX executable publisher_wait_for_all_acked[0m
+[50.784s] [100%] Built target publisher_wait_for_all_acked
+[50.797s] Invoked command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_publisher' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_publisher -- -j12 -l12
+[50.840s] Invoking command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_publisher': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --install /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_publisher
+[50.847s] -- Install configuration: ""
+[50.848s] -- Execute custom install script
+[50.848s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/lib/examples_rclcpp_minimal_publisher/publisher_lambda
+[50.858s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/lib/examples_rclcpp_minimal_publisher/publisher_member_function
+[50.867s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/lib/examples_rclcpp_minimal_publisher/publisher_member_function_with_type_adapter
+[50.876s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/lib/examples_rclcpp_minimal_publisher/publisher_member_function_with_unique_network_flow_endpoints
+[50.885s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/lib/examples_rclcpp_minimal_publisher/publisher_wait_for_all_acked
+[50.895s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/lib/examples_rclcpp_minimal_publisher/publisher_not_composable
+[50.905s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/ament_index/resource_index/package_run_dependencies/examples_rclcpp_minimal_publisher
+[50.914s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/ament_index/resource_index/parent_prefix_path/examples_rclcpp_minimal_publisher
+[50.924s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/examples_rclcpp_minimal_publisher/environment/ament_prefix_path.sh
+[50.933s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/examples_rclcpp_minimal_publisher/environment/ament_prefix_path.dsv
+[50.942s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/examples_rclcpp_minimal_publisher/environment/path.sh
+[50.950s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/examples_rclcpp_minimal_publisher/environment/path.dsv
+[50.959s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/examples_rclcpp_minimal_publisher/local_setup.bash
+[50.968s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/examples_rclcpp_minimal_publisher/local_setup.sh
+[50.976s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/examples_rclcpp_minimal_publisher/local_setup.zsh
+[50.985s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/examples_rclcpp_minimal_publisher/local_setup.dsv
+[50.994s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/examples_rclcpp_minimal_publisher/package.dsv
+[51.003s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/ament_index/resource_index/packages/examples_rclcpp_minimal_publisher
+[51.011s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/examples_rclcpp_minimal_publisher/cmake/examples_rclcpp_minimal_publisherConfig.cmake
+[51.019s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/examples_rclcpp_minimal_publisher/cmake/examples_rclcpp_minimal_publisherConfig-version.cmake
+[51.029s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_publisher/share/examples_rclcpp_minimal_publisher/package.xml
+[51.040s] Invoked command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_publisher' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --install /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_publisher

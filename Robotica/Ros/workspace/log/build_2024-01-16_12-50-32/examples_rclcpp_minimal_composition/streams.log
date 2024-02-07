@@ -1,0 +1,83 @@
+[0.343s] Invoking command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition
+[0.544s] -- The C compiler identification is GNU 11.4.0
+[0.698s] -- The CXX compiler identification is GNU 11.4.0
+[0.715s] -- Detecting C compiler ABI info
+[0.889s] -- Detecting C compiler ABI info - done
+[0.908s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.909s] -- Detecting C compile features
+[0.910s] -- Detecting C compile features - done
+[0.917s] -- Detecting CXX compiler ABI info
+[1.123s] -- Detecting CXX compiler ABI info - done
+[1.149s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.149s] -- Detecting CXX compile features
+[1.150s] -- Detecting CXX compile features - done
+[1.154s] -- Found ament_cmake: 2.0.3 (/opt/ros/iron/share/ament_cmake/cmake)
+[1.569s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[1.729s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.772s] -- Found rclcpp: 21.0.4 (/opt/ros/iron/share/rclcpp/cmake)
+[1.871s] -- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+[1.898s] -- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+[1.942s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.990s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.463s] -- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+[2.471s] -- Found rmw_fastrtps_cpp: 7.1.2 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+[2.706s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.768s] -- Found FastRTPS: /opt/ros/iron/include  
+[2.870s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.401s] -- Found rclcpp_components: 21.0.4 (/opt/ros/iron/share/rclcpp_components/cmake)
+[3.713s] -- Found std_msgs: 5.0.0 (/opt/ros/iron/share/std_msgs/cmake)
+[3.825s] -- Found ament_lint_auto: 0.14.2 (/opt/ros/iron/share/ament_lint_auto/cmake)
+[3.999s] -- Added test 'copyright' to check source files copyright and LICENSE
+[4.001s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[4.002s] -- Configured cppcheck include dirs: /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition/include
+[4.002s] -- Configured cppcheck exclude dirs and/or files: 
+[4.004s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[4.005s] -- Configured cpplint exclude dirs and/or files: 
+[4.007s] -- Added test 'lint_cmake' to check CMake code style
+[4.009s] -- Added test 'uncrustify' to check C / C++ code style
+[4.010s] -- Configured uncrustify additional arguments: 
+[4.014s] -- Added test 'xmllint' to check XML markup files
+[4.018s] -- Configuring done
+[4.098s] -- Generating done
+[4.102s] -- Build files have been written to: /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition
+[4.167s] Invoked command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition
+[4.168s] Invoking command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition -- -j12 -l12
+[4.532s] [ 11%] [32mBuilding CXX object CMakeFiles/composition_nodes.dir/src/publisher_node.cpp.o[0m
+[4.573s] [ 22%] [32mBuilding CXX object CMakeFiles/composition_nodes.dir/src/subscriber_node.cpp.o[0m
+[39.170s] [ 33%] [32m[1mLinking CXX shared library libcomposition_nodes.so[0m
+[40.577s] [ 33%] Built target composition_nodes
+[40.614s] [ 44%] [32mBuilding CXX object CMakeFiles/composition_publisher.dir/src/standalone_publisher.cpp.o[0m
+[46.102s] [ 55%] [32m[1mLinking CXX executable composition_publisher[0m
+[46.350s] [ 55%] Built target composition_publisher
+[46.372s] [ 66%] [32mBuilding CXX object CMakeFiles/composition_composed.dir/src/composed.cpp.o[0m
+[51.048s] [ 77%] [32m[1mLinking CXX executable composition_composed[0m
+[51.279s] [ 77%] Built target composition_composed
+[51.294s] [ 88%] [32mBuilding CXX object CMakeFiles/composition_subscriber.dir/src/standalone_subscriber.cpp.o[0m
+[55.096s] [100%] [32m[1mLinking CXX executable composition_subscriber[0m
+[55.310s] [100%] Built target composition_subscriber
+[55.321s] Invoked command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition -- -j12 -l12
+[55.356s] Invoking command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --install /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition
+[55.363s] -- Install configuration: ""
+[55.363s] -- Execute custom install script
+[55.364s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/environment/library_path.sh
+[55.372s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/environment/library_path.dsv
+[55.381s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/lib/libcomposition_nodes.so
+[55.390s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/lib/examples_rclcpp_minimal_composition/composition_publisher
+[55.399s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/lib/examples_rclcpp_minimal_composition/composition_subscriber
+[55.406s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/lib/examples_rclcpp_minimal_composition/composition_composed
+[55.414s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/ament_index/resource_index/package_run_dependencies/examples_rclcpp_minimal_composition
+[55.422s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/ament_index/resource_index/parent_prefix_path/examples_rclcpp_minimal_composition
+[55.429s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/environment/ament_prefix_path.sh
+[55.437s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/environment/ament_prefix_path.dsv
+[55.445s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/environment/path.sh
+[55.453s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/environment/path.dsv
+[55.460s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/local_setup.bash
+[55.468s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/local_setup.sh
+[55.476s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/local_setup.zsh
+[55.483s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/local_setup.dsv
+[55.491s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/package.dsv
+[55.499s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/ament_index/resource_index/packages/examples_rclcpp_minimal_composition
+[55.506s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/cmake/examples_rclcpp_minimal_compositionConfig.cmake
+[55.514s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/cmake/examples_rclcpp_minimal_compositionConfig-version.cmake
+[55.522s] -- Symlinking: /home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/share/examples_rclcpp_minimal_composition/package.xml
+[55.531s] Invoked command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --install /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition

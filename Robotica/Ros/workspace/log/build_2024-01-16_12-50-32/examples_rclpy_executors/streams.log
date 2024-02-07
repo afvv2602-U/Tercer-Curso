@@ -1,0 +1,33 @@
+[5.831s] Invoking command in '/home/randy/Documents/Robotica/workspace/build/examples_rclpy_executors': PYTHONPATH=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_executors/prefix_override:/home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/randy/Documents/Robotica/workspace/build/examples_rclpy_executors/build --no-deps install_data
+[6.430s] running develop
+[6.430s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[6.430s]   warnings.warn(
+[6.433s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[6.433s]   warnings.warn(
+[6.699s] running egg_info
+[6.699s] creating examples_rclpy_executors.egg-info
+[6.699s] writing examples_rclpy_executors.egg-info/PKG-INFO
+[6.700s] writing dependency_links to examples_rclpy_executors.egg-info/dependency_links.txt
+[6.700s] writing entry points to examples_rclpy_executors.egg-info/entry_points.txt
+[6.700s] writing requirements to examples_rclpy_executors.egg-info/requires.txt
+[6.701s] writing top-level names to examples_rclpy_executors.egg-info/top_level.txt
+[6.701s] writing manifest file 'examples_rclpy_executors.egg-info/SOURCES.txt'
+[6.703s] reading manifest file 'examples_rclpy_executors.egg-info/SOURCES.txt'
+[6.705s] writing manifest file 'examples_rclpy_executors.egg-info/SOURCES.txt'
+[6.706s] running build_ext
+[6.707s] Creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/lib/python3.10/site-packages/examples-rclpy-executors.egg-link (link to .)
+[6.708s] Installing callback_group script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/lib/examples_rclpy_executors
+[6.709s] Installing composed script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/lib/examples_rclpy_executors
+[6.709s] Installing custom_callback_group script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/lib/examples_rclpy_executors
+[6.709s] Installing custom_executor script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/lib/examples_rclpy_executors
+[6.709s] Installing listener script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/lib/examples_rclpy_executors
+[6.709s] Installing talker script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/lib/examples_rclpy_executors
+[6.710s] 
+[6.710s] Installed /home/randy/Documents/Robotica/workspace/build/examples_rclpy_executors
+[6.710s] running install_data
+[6.711s] creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/share/ament_index
+[6.711s] creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/share/ament_index/resource_index
+[6.711s] creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/share/ament_index/resource_index/packages
+[6.711s] copying resource/examples_rclpy_executors -> /home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/share/ament_index/resource_index/packages
+[6.711s] copying package.xml -> /home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/share/examples_rclpy_executors
+[6.940s] Invoked command in '/home/randy/Documents/Robotica/workspace/build/examples_rclpy_executors' returned '0': PYTHONPATH=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_executors/prefix_override:/home/randy/Documents/Robotica/workspace/install/examples_rclpy_executors/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/randy/Documents/Robotica/workspace/build/examples_rclpy_executors/build --no-deps install_data

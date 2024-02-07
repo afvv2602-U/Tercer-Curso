@@ -1,0 +1,135 @@
+[0.378s] Invoking command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition': AMENT_PREFIX_PATH=/home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition LD_LIBRARY_PATH=/home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/lib:${LD_LIBRARY_PATH} /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+[0.401s] UpdateCTestConfiguration  from :/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/CTestConfiguration.ini
+[0.401s] Parse Config file:/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/CTestConfiguration.ini
+[0.402s]    Site: randy-P65-Creator-8RE
+[0.402s]    Build name: (empty)
+[0.402s]  Add coverage exclude regular expressions.
+[0.402s] Create new tag: 20240116-1152 - Experimental
+[0.402s] UpdateCTestConfiguration  from :/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/CTestConfiguration.ini
+[0.402s] Parse Config file:/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/CTestConfiguration.ini
+[0.402s] Test project /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition
+[0.403s] Constructing a list of tests
+[0.403s] Done constructing a list of tests
+[0.403s] Updating test list for fixtures
+[0.403s] Added 0 tests to meet fixture requirements
+[0.403s] Checking test dependency graph...
+[0.403s] Checking test dependency graph end
+[0.403s] test 1
+[0.404s]     Start 1: copyright
+[0.404s] 
+[0.404s] 1: Test command: /usr/bin/python3.10 "-u" "/opt/ros/iron/share/ament_cmake_test/cmake/run_test.py" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/copyright.xunit.xml" "--package-name" "examples_rclcpp_minimal_composition" "--output-file" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/ament_copyright/copyright.txt" "--command" "/opt/ros/iron/bin/ament_copyright" "--xunit-file" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/copyright.xunit.xml"
+[0.406s] 1: Test timeout computed to be: 200
+[0.491s] 1: -- run_test.py: invoking following command in '/home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition':
+[0.492s] 1:  - /opt/ros/iron/bin/ament_copyright --xunit-file /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/copyright.xunit.xml
+[1.388s] 1: No problems found, checked 8 files
+[1.435s] 1: -- run_test.py: return code 0
+[1.435s] 1: -- run_test.py: verify result file '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/copyright.xunit.xml'
+[1.445s] 1/6 Test #1: copyright ........................   Passed    1.07 sec
+[1.446s] test 2
+[1.447s]     Start 2: cppcheck
+[1.447s] 
+[1.447s] 2: Test command: /usr/bin/python3.10 "-u" "/opt/ros/iron/share/ament_cmake_test/cmake/run_test.py" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/cppcheck.xunit.xml" "--package-name" "examples_rclcpp_minimal_composition" "--output-file" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/ament_cppcheck/cppcheck.txt" "--command" "/opt/ros/iron/bin/ament_cppcheck" "--xunit-file" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/cppcheck.xunit.xml" "--include_dirs" "/home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition/include"
+[1.447s] 2: Test timeout computed to be: 300
+[1.576s] 2: -- run_test.py: invoking following command in '/home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition':
+[1.576s] 2:  - /opt/ros/iron/bin/ament_cppcheck --xunit-file /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/cppcheck.xunit.xml --include_dirs /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition/include
+[1.763s] 2: cppcheck 2.7 has known performance issues and therefore will not be used, set the AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS environment variable to override this.
+[1.787s] 2: -- run_test.py: return code 0
+[1.787s] 2: -- run_test.py: verify result file '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/cppcheck.xunit.xml'
+[1.805s] 2/6 Test #2: cppcheck .........................   Passed    0.36 sec
+[1.805s] test 3
+[1.806s]     Start 3: cpplint
+[1.806s] 
+[1.807s] 3: Test command: /usr/bin/python3.10 "-u" "/opt/ros/iron/share/ament_cmake_test/cmake/run_test.py" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/cpplint.xunit.xml" "--package-name" "examples_rclcpp_minimal_composition" "--output-file" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/ament_cpplint/cpplint.txt" "--command" "/opt/ros/iron/bin/ament_cpplint" "--xunit-file" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/cpplint.xunit.xml"
+[1.807s] 3: Test timeout computed to be: 120
+[1.942s] 3: -- run_test.py: invoking following command in '/home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition':
+[1.942s] 3:  - /opt/ros/iron/bin/ament_cpplint --xunit-file /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/cpplint.xunit.xml
+[2.341s] 3: Using '--root=/home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition/include' argument
+[2.342s] 3: 
+[2.342s] 3: Done processing /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition/include/minimal_composition/publisher_node.hpp
+[2.342s] 3: 
+[2.342s] 3: Done processing /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition/include/minimal_composition/subscriber_node.hpp
+[2.342s] 3: 
+[2.342s] 3: Done processing /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition/include/minimal_composition/visibility.h
+[2.342s] 3: 
+[2.342s] 3: Using '--root=/home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition/src' argument
+[2.343s] 3: 
+[2.343s] 3: Done processing /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition/src/composed.cpp
+[2.343s] 3: 
+[2.343s] 3: Done processing /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition/src/publisher_node.cpp
+[2.343s] 3: 
+[2.343s] 3: Done processing /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition/src/standalone_publisher.cpp
+[2.343s] 3: 
+[2.344s] 3: Done processing /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition/src/standalone_subscriber.cpp
+[2.344s] 3: 
+[2.344s] 3: Done processing /home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition/src/subscriber_node.cpp
+[2.344s] 3: 
+[2.344s] 3: No problems found
+[2.373s] 3: -- run_test.py: return code 0
+[2.373s] 3: -- run_test.py: verify result file '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/cpplint.xunit.xml'
+[2.427s] 3/6 Test #3: cpplint ..........................   Passed    0.61 sec
+[2.427s] test 4
+[2.427s]     Start 4: lint_cmake
+[2.427s] 
+[2.428s] 4: Test command: /usr/bin/python3.10 "-u" "/opt/ros/iron/share/ament_cmake_test/cmake/run_test.py" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/lint_cmake.xunit.xml" "--package-name" "examples_rclcpp_minimal_composition" "--output-file" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/ament_lint_cmake/lint_cmake.txt" "--command" "/opt/ros/iron/bin/ament_lint_cmake" "--xunit-file" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/lint_cmake.xunit.xml"
+[2.428s] 4: Test timeout computed to be: 60
+[2.551s] 4: -- run_test.py: invoking following command in '/home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition':
+[2.551s] 4:  - /opt/ros/iron/bin/ament_lint_cmake --xunit-file /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/lint_cmake.xunit.xml
+[2.700s] 4: 
+[2.700s] 4: No problems found
+[2.734s] 4: -- run_test.py: return code 0
+[2.734s] 4: -- run_test.py: verify result file '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/lint_cmake.xunit.xml'
+[2.750s] 4/6 Test #4: lint_cmake .......................   Passed    0.33 sec
+[2.751s] test 5
+[2.751s]     Start 5: uncrustify
+[2.751s] 
+[2.751s] 5: Test command: /usr/bin/python3.10 "-u" "/opt/ros/iron/share/ament_cmake_test/cmake/run_test.py" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/uncrustify.xunit.xml" "--package-name" "examples_rclcpp_minimal_composition" "--output-file" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/ament_uncrustify/uncrustify.txt" "--command" "/opt/ros/iron/bin/ament_uncrustify" "--xunit-file" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/uncrustify.xunit.xml"
+[2.751s] 5: Test timeout computed to be: 60
+[2.840s] 5: -- run_test.py: invoking following command in '/home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition':
+[2.840s] 5:  - /opt/ros/iron/bin/ament_uncrustify --xunit-file /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/uncrustify.xunit.xml
+[2.936s] 5: No code style divergence in file 'include/minimal_composition/publisher_node.hpp'
+[2.937s] 5: 
+[2.937s] 5: No code style divergence in file 'include/minimal_composition/subscriber_node.hpp'
+[2.937s] 5: 
+[2.937s] 5: No code style divergence in file 'include/minimal_composition/visibility.h'
+[2.937s] 5: 
+[2.937s] 5: No code style divergence in file 'src/composed.cpp'
+[2.937s] 5: 
+[2.937s] 5: No code style divergence in file 'src/publisher_node.cpp'
+[2.938s] 5: 
+[2.938s] 5: No code style divergence in file 'src/standalone_publisher.cpp'
+[2.938s] 5: 
+[2.938s] 5: No code style divergence in file 'src/standalone_subscriber.cpp'
+[2.938s] 5: 
+[2.938s] 5: No code style divergence in file 'src/subscriber_node.cpp'
+[2.938s] 5: 
+[2.939s] 5: No problems found
+[2.950s] 5: -- run_test.py: return code 0
+[2.950s] 5: -- run_test.py: verify result file '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/uncrustify.xunit.xml'
+[2.962s] 5/6 Test #5: uncrustify .......................   Passed    0.21 sec
+[2.962s] test 6
+[2.962s]     Start 6: xmllint
+[2.962s] 
+[2.962s] 6: Test command: /usr/bin/python3.10 "-u" "/opt/ros/iron/share/ament_cmake_test/cmake/run_test.py" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/xmllint.xunit.xml" "--package-name" "examples_rclcpp_minimal_composition" "--output-file" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/ament_xmllint/xmllint.txt" "--command" "/opt/ros/iron/bin/ament_xmllint" "--xunit-file" "/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/xmllint.xunit.xml"
+[2.963s] 6: Test timeout computed to be: 60
+[3.027s] 6: -- run_test.py: invoking following command in '/home/randy/Documents/Robotica/workspace/src/examples/rclcpp/composition/minimal_composition':
+[3.027s] 6:  - /opt/ros/iron/bin/ament_xmllint --xunit-file /home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/xmllint.xunit.xml
+[3.367s] 6: File 'package.xml' is valid
+[3.367s] 6: 
+[3.367s] 6: No problems found
+[3.377s] 6: -- run_test.py: return code 0
+[3.377s] 6: -- run_test.py: verify result file '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition/test_results/examples_rclcpp_minimal_composition/xmllint.xunit.xml'
+[3.388s] 6/6 Test #6: xmllint ..........................   Passed    0.43 sec
+[3.388s] 
+[3.389s] [0;32m100% tests passed[0;0m, 0 tests failed[0;0m out of 6
+[3.389s] 
+[3.389s] Label Time Summary:
+[3.389s] copyright     =   1.07 sec*proc (1 test)
+[3.390s] cppcheck      =   0.36 sec*proc (1 test)
+[3.390s] cpplint       =   0.61 sec*proc (1 test)
+[3.390s] lint_cmake    =   0.33 sec*proc (1 test)
+[3.391s] linter        =   3.01 sec*proc (6 tests)
+[3.391s] uncrustify    =   0.21 sec*proc (1 test)
+[3.391s] xmllint       =   0.43 sec*proc (1 test)
+[3.391s] 
+[3.392s] Total Test time (real) =   3.02 sec
+[3.774s] Invoked command in '/home/randy/Documents/Robotica/workspace/build/examples_rclcpp_minimal_composition' returned '0': AMENT_PREFIX_PATH=/home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition LD_LIBRARY_PATH=/home/randy/Documents/Robotica/workspace/install/examples_rclcpp_minimal_composition/lib:${LD_LIBRARY_PATH} /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process

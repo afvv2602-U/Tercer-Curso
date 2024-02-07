@@ -1,0 +1,31 @@
+[4.688s] Invoking command in '/home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_action_client': PYTHONPATH=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_action_client/prefix_override:/home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_action_client/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_action_client/build --no-deps install_data
+[5.273s] running develop
+[5.274s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[5.274s]   warnings.warn(
+[5.277s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[5.278s]   warnings.warn(
+[5.693s] running egg_info
+[5.693s] creating examples_rclpy_minimal_action_client.egg-info
+[5.694s] writing examples_rclpy_minimal_action_client.egg-info/PKG-INFO
+[5.694s] writing dependency_links to examples_rclpy_minimal_action_client.egg-info/dependency_links.txt
+[5.694s] writing entry points to examples_rclpy_minimal_action_client.egg-info/entry_points.txt
+[5.695s] writing requirements to examples_rclpy_minimal_action_client.egg-info/requires.txt
+[5.695s] writing top-level names to examples_rclpy_minimal_action_client.egg-info/top_level.txt
+[5.695s] writing manifest file 'examples_rclpy_minimal_action_client.egg-info/SOURCES.txt'
+[5.699s] reading manifest file 'examples_rclpy_minimal_action_client.egg-info/SOURCES.txt'
+[5.700s] writing manifest file 'examples_rclpy_minimal_action_client.egg-info/SOURCES.txt'
+[5.703s] running build_ext
+[5.703s] Creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_action_client/lib/python3.10/site-packages/examples-rclpy-minimal-action-client.egg-link (link to .)
+[5.705s] Installing client script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_action_client/lib/examples_rclpy_minimal_action_client
+[5.706s] Installing client_asyncio script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_action_client/lib/examples_rclpy_minimal_action_client
+[5.706s] Installing client_cancel script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_action_client/lib/examples_rclpy_minimal_action_client
+[5.706s] Installing client_not_composable script to /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_action_client/lib/examples_rclpy_minimal_action_client
+[5.706s] 
+[5.707s] Installed /home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_action_client
+[5.707s] running install_data
+[5.707s] creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_action_client/share/ament_index
+[5.707s] creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_action_client/share/ament_index/resource_index
+[5.707s] creating /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_action_client/share/ament_index/resource_index/packages
+[5.708s] copying resource/examples_rclpy_minimal_action_client -> /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_action_client/share/ament_index/resource_index/packages
+[5.708s] copying package.xml -> /home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_action_client/share/examples_rclpy_minimal_action_client
+[6.151s] Invoked command in '/home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_action_client' returned '0': PYTHONPATH=/home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_action_client/prefix_override:/home/randy/Documents/Robotica/workspace/install/examples_rclpy_minimal_action_client/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/randy/Documents/Robotica/workspace/build/examples_rclpy_minimal_action_client/build --no-deps install_data
